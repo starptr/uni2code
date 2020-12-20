@@ -38,7 +38,6 @@ function App() {
 				<Box
 					sx={{
 						width: ["90%", null, "50em"],
-						color: ["red", "blue", "green"],
 					}}
 				>
 					<Heading
