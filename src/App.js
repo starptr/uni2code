@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import logo from "./logo.svg";
 import {
 	jsx,
 	ThemeProvider,
@@ -10,7 +9,7 @@ import {
 	Box,
 	Button,
 } from "theme-ui";
-import React, { useState, Component } from "react";
+import { useState } from "react";
 import owoify from "owoify-js";
 import useClipboard from "react-hook-clipboard";
 import twitterMeme from "./twitterMeme";
@@ -26,7 +25,7 @@ function App() {
 	const [mapping, setMapping] = useState(mapperLabels[0]);
 	const [inputText, setInputText] = useState("");
 	const [outputText, setOutputText] = useState("");
-	const [clipboard, copyToClipboard] = useClipboard();
+	const copyToClipboard = useClipboard()[1];
 
 	return (
 		<ThemeProvider theme={theme}>
