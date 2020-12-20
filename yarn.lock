@@ -9042,11 +9042,6 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
 
-react-hook-clipboard@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-hook-clipboard/-/react-hook-clipboard-1.0.0.tgz#f0a856e82bb7a0db6dd641d422d1f28addf86fd0"
-  integrity sha512-9ix27NypRb2LUXJ9Xry6oFfG/dHt5MMNdHNKiogHBwIsN2rybr2ZnMDIDDwg+tQfX3Anfa7SDWZq4JdTDjMstw==
-
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

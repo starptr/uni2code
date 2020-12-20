@@ -11,7 +11,6 @@ import {
 } from "theme-ui";
 import { useState } from "react";
 import owoify from "owoify-js";
-import useClipboard from "react-hook-clipboard";
 import twitterMeme from "./twitterMeme";
 import theme from "./theme";
 
@@ -25,7 +24,6 @@ function App() {
 	const [mapping, setMapping] = useState(mapperLabels[0]);
 	const [inputText, setInputText] = useState("");
 	const [outputText, setOutputText] = useState("");
-	const copyToClipboard = useClipboard()[1];
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -96,7 +94,7 @@ function App() {
 							justifyContent: "flex-end",
 						}}
 					>
-						<Button onClick={() => copyToClipboard(outputText)}>Copy</Button>
+						<Button onClick={() => navigator.clipboard.writeText(outputText)}>Copy</Button>
 					</Flex>
 				</Box>
 			</Flex>
