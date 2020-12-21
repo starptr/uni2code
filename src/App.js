@@ -9,7 +9,7 @@ import {
 	Box,
 	Button,
 } from "theme-ui";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import owoify from "owoify-js";
 import twitterMeme from "./twitterMeme";
 import theme from "./theme";
@@ -24,6 +24,9 @@ function App() {
 	const [mapping, setMapping] = useState(mapperLabels[0]);
 	const [inputText, setInputText] = useState("");
 	const [outputText, setOutputText] = useState("");
+
+	const inputTextRef = useRef(inputText);
+	const mappingRef = useRef(mapping);
 
 	return (
 		<ThemeProvider theme={theme}>
@@ -49,7 +52,12 @@ function App() {
 					</Heading>
 					<Select
 						sx={{ fontSize: 18, width: ["100%", null, "40%"] }}
-						onChange={(e) => setMapping(e.target.value)}
+						onChange={(e) => {
+							setMapping(() => {
+								mappingRef.current = e.target.value;
+								setOutputText(mappers[mappingRef.current](inputTextRef.current));
+							});
+						}}
 					>
 						{mapperLabels.map((label) => (
 							<option key={label} value={label}>
@@ -72,8 +80,10 @@ function App() {
 								rows={6}
 								value={inputText}
 								onChange={(e) => {
-									setInputText(e.target.value);
-									setOutputText(mappers[mapping](e.target.value));
+									setInputText(() => {
+										inputTextRef.current = e.target.value;
+										setOutputText(mappers[mappingRef.current](inputTextRef.current));
+									});
 								}}
 							/>
 						</Box>
