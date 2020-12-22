@@ -7,6 +7,7 @@ import {
 	Select,
 	Textarea,
 	Box,
+	Link,
 	Button,
 } from "theme-ui";
 import { useState, useRef } from "react";
@@ -55,7 +56,9 @@ function App() {
 						onChange={(e) => {
 							setMapping(() => {
 								mappingRef.current = e.target.value;
-								setOutputText(mappers[mappingRef.current](inputTextRef.current));
+								setOutputText(
+									mappers[mappingRef.current](inputTextRef.current)
+								);
 							});
 						}}
 					>
@@ -82,7 +85,9 @@ function App() {
 								onChange={(e) => {
 									setInputText(() => {
 										inputTextRef.current = e.target.value;
-										setOutputText(mappers[mappingRef.current](inputTextRef.current));
+										setOutputText(
+											mappers[mappingRef.current](inputTextRef.current)
+										);
 									});
 								}}
 							/>
@@ -101,10 +106,23 @@ function App() {
 					<Box sx={{ height: "1em" }} />
 					<Flex
 						sx={{
-							justifyContent: "flex-end",
+							justifyContent: "space-between",
+							alignItems: "center",
 						}}
 					>
-						<Button onClick={() => navigator.clipboard.writeText(outputText)}>Copy</Button>
+						<Flex sx={{ width: "100%" }}>
+							<Link href="https://github.com/starptr/uni2code">
+								Source Code
+							</Link>
+						</Flex>
+						<Flex sx={{ width: "100%", justifyContent: "center" }}>
+							<Link href="https://youtu.be/SIqG4kHN5O0">Video</Link>
+						</Flex>
+						<Flex sx={{ width: "100%", justifyContent: "flex-end" }}>
+							<Button onClick={() => navigator.clipboard.writeText(outputText)}>
+								Copy
+							</Button>
+						</Flex>
 					</Flex>
 				</Box>
 			</Flex>

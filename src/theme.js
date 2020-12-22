@@ -13,6 +13,14 @@ export default {
 		body: 400,
 		heading: 700,
 	},
+	styles: {
+		a: {
+			fontFamily: 'body',
+			textDecoration: 'none',
+			color: '#4078c0',
+			fontWeight: 'bold',
+		},
+	},
 	forms: {
 		natural: {
 			fontFamily: 'body',
